@@ -67,12 +67,14 @@ class SynthesizerAgent(BaseAgent):
         Your objective is to synthesize a comprehensive research report based ONLY on the provided context data.
 
         IMPORTANT FORMATTING RULES:
-        - Do NOT use any emojis anywhere in the output.
-        - Use formal, academic language throughout.
-        - You MUST include AT LEAST 6 distinct inline citations (e.g., "[1]", "[2]", "[3]") spread across ALL sections.
-        - Every factual claim, statistic, timeline, and technical detail MUST be cited using the citation keys from the SOURCE INDEX below.
-        - Use citations from BOTH academic sources (marked ACADEMIC) and web sources (marked WEB) to show source diversity.
-        - Do NOT cluster all citations in one paragraph. Distribute them evenly across the report.
+         - Do NOT use any emojis anywhere in the output.
+         - Use formal, academic language throughout.
+         - You MUST include AT LEAST 6 distinct inline citations (e.g., "[1]", "[2]", "[3]") spread across ALL sections.
+         - Every factual claim, statistic, timeline, and technical detail MUST be cited using the citation keys from the SOURCE INDEX below.
+         - Use citations from BOTH academic sources (marked ACADEMIC) and web sources (marked WEB) to show source diversity.
+         - Do NOT cluster all citations in one paragraph. Distribute them evenly across the report.
+         - Do NOT compile or generate a "References", "Bibliography", or "Citations" section at the end of your response. The system will append the official "References & Citations" section programmatically. Stop generation after Section V (Conclusions).
+
 
         ### SOURCE INDEX (use these citation keys):
         {source_index}
@@ -137,7 +139,7 @@ class SynthesizerAgent(BaseAgent):
                 report_body = response.text.strip()
 
                 # Programmatically compile references section with source diversity badges
-                references_section = "\n\n---\n\n## VI. References & Citation Ledger\n"
+                references_section = "\n\n---\n\n## VI. References & Citations\n"
 
                 # Separate academic and web sources
                 academic_refs = []
