@@ -1,0 +1,11 @@
+[theme]
+primaryColor = "#0071E3"         # Apple System Blue for action accents
+backgroundColor = "#FFFFFF"      # Crisp Paper White background
+secondaryBackgroundColor = "#F5F5F7" # Light off-white for sidebars and cards
+textColor = "#1D1D1F"            # Deep Charcoal for text (never pure black #000)
+font = "sans serif"              # Clean, modern typography
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = false
